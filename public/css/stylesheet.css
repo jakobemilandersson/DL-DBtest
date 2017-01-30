@@ -1,0 +1,165 @@
+#canvas{position:absolute; z-index-1;}
+#buttons{text-align:center;}
+#controlDiv{flex:1;}
+#sizeDiv{display:inline-block;}
+#colorDiv{margin-top:20px;}
+#size{margin:auto; margin-top:8px;}
+#Header{text-align:center; color:#6495ED}
+#onlineUsersList{list-style-type: none;}
+#content{text-align:center; flex:3;}
+#usersVotes{flex:1;display:inline-block;}
+#users{flex:1;display:inline-block;}
+#preview_canvas{text-align:center;}
+#specificUserVote{padding-left:47%}
+#clearQ{text-align:center;}
+#voteContainer{text-align:center;}
+#menu{position:absolute; z-index:1;}
+#color{margin:auto; margin-top:8px;}
+#voteHeader{margin-top:70px; color:white; text-align:center;}
+#vStats{margin:auto; width:75%;}
+#voteButtonID{margin:auto;}
+#downloadContainer{text-align:center; margin-top:80px;}
+#downloadBut{margin:auto;}
+#usersDiv{margin-top:100px;}
+#drawline{display:inline; font-size:35px; padding-right:15%; color: white;}
+#create{padding-bottom:40px; text-align:center;}
+#cRoom{left:50%; transform: translate(-50%, 0); margin-top:10px;}
+
+#roomsContainer{padding:0;height:0; width:0; background-color:#f2f0ee; display:none; position:absolute; z-index:3; transition: 1s;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+  }
+
+#roomList{
+    display:none;
+    width:0;
+    height:0;
+    pointer-events: none;
+    margin-left:35%
+}
+
+#newRoom{display:none; font-size:20px;}
+
+#rLabel{margin-top:30px;}
+#newRoomInfo{display:none; position:absolute; top: 0; left: 0; transform: translate(-50%, -25%); transition:1s; z-index: 4; padding-top:0; }
+#rListTitle{text-align:center;}
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden;
+    padding-top: 0; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.sidenav::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+/* The navigation menu links */
+.sidenav a, p, input, progress{
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav p{
+  padding-left:20px;
+}
+
+
+.sidenav ul{
+  padding-left:20px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position:absolute;
+    display:inline;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.box .closebtn {
+    display:inline;
+    position:absolute;
+
+    right: 10px;
+    font-size: 20px;
+
+}
+
+#header{
+  padding-bottom:0;
+
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+li{margin-bottom:10%; /* limit width */}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    display: block;
+    text-align:center;
+    margin-top: 20px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    left:50%;
+    transform:translate(-50%,0);
+}
+
+/* Links inside the dropdown */
+.dropdown-content p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+#Normal {background-color: #d9d9d9;}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+html{padding:0; margin-bottom:0;}
+body {
+    overflow: hidden;
+    margin:0;
+    background-color: white;
+    font-family: Helvetica, Arial, sans-serif;
+}

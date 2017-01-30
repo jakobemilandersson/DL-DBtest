@@ -1,0 +1,16 @@
+body{
+
+font-family: Helvetica, Arial, sans-serif;
+}
+
+#nameFormId{text-align:center; margin-top:3%}
+
+#nameInputId{
+    width: 200px;
+}
+
+#info{height:100px;}
+
+#indexDrawline{color:#00D1B2; text-align:center;}
+
+#container{margin-top:10%;}

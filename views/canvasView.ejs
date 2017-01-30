@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Drawline Beta</title>
+		<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+		<script src="../scripts/jscolor.js"></script>
+		<script src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js"></script>
+		<script src ="https://rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bulma.css"/>
+	</head>
+
+	<body>
+		<div id ="container">
+			<div class = "box" id ="roomsContainer">
+				<div class = "box" id = "newRoomInfo">
+					<a href="javascript:void(0)" class="closebtn" onclick="hideNewRoomInfo()">&times;</a>
+					<label id = "rLabel" class="label">Room Name</label>
+						<p class="control">
+						  <input id = "roomName" class="input" type="text" placeholder="Name">
+						  <a href="javascript:void(0)" class="button is-success" id="cRoom"> Create </a>
+						</p>
+				</div>
+				<div id="roomsHeader">
+					<a id = "newRoom" class="button is-info">Create Room</a>
+					<a href="javascript:void(0)" class="closebtn" onclick="hideRooms()">&times;</a>
+				</div>
+				<h2 id="rListTitle" class="title is-2">Rooms</h2>
+				<div id="curr"></div>
+				<table id = "roomList" class="table">
+					<thead>
+				    <tr>
+				      <th>Room</th>
+				      <th>Connected</th>
+				    </tr>
+				  </thead>
+
+					<tbody>
+						<tr>
+			        <td><a href="#">test</a></td>
+							<td>5</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+			<div id="mySidenav" class="sidenav">
+				<div id="header">
+					<p id="drawline"> Drawline </p>
+				  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				</div>
+
+				<a id="create" onclick="showRooms()"><h2>List of rooms</h2></a>
+
+				<p> Size </p>
+			  <input type="range" id="size" min="2" value="10" max="30" step="2">
+
+				<div id="colorDiv">
+				  <p>Color</p>
+				  <input id = "color" class="jscolor" value="ab2567">
+				</div>
+
+				<div class="dropdown">
+				  <button class="button is-primary">Brushes</button>
+				  <div class="dropdown-content">
+				    <p id="Normal">Normal</p>
+				    <p id="Japanese">Japanese</p>
+				  </div>
+				</div>
+
+				<h3 class="title is-3" id="voteHeader"> Clear canvas? </h3>
+				<progress class = "progress is-primary"  id="vStats" max="100"></progress>
+				<p id="specificUserVote"></p>
+				<div id="voteContainer"> <input id = "voteButtonID" class="button is-primary" type = "button" value = "Change vote" name = "vote_button"></div>
+				<div id="usersDiv">
+					<p id = "usersHeader">Online Users</p>
+					<ul id = onlineUsersList></ul>
+				</div>
+				<div id="downloadContainer">
+					<input class="button is-light" id="downloadBut" value="Download painting" type="button"></input>
+				</div>
+			</div>
+
+			<!-- Use any element to open the sidenav -->
+			<button id="menu" class="button is-primary"onclick="openNav()">Menu</button>
+
+			<canvas id="canvas"></canvas>
+		</div>
+	</body>
+	<script>
+		var username = JSON.parse('<%- username %>');
+	</script>
+	<script src = "/socket.io/socket.io.js"></script>
+	<script src = "../scripts/styling.js"></script>
+	<script src = "../scripts/communication.js"></script>
+	<script src="../scripts/canvasScript.js"> </script>
+	<script src = "../scripts/userScript.js"></script>
+</html>
