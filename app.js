@@ -24,16 +24,19 @@ mongoClient.connect(url, function(err, db) {
 
 	else {
 		console.log('MongoDB succesfully connected.');
+		/*
 		if(collectionExists('User', db)) {
 			db.collection.remove('User', function(err, collection) {});
 		}
+		*/
 		db.createCollection('User', function(err, collection) {});
 		db.collection('User').insert({'user':'ADMIN', "socketID":0});
 		console.log('COLLECTION: User, created.');
-		
+		/*
 		if(collectionExists('UserMove', db)) {
 			db.collection.remove('UserMove', function(err, collection) {});
 		}
+		*/
 		db.createCollection('UserMove', function(err, collection) {});
 		db.collection('UserMove').insert({'socketID':0, 'move':[0,0]});
 		console.log('COLLECTION: UserMove, created.');
@@ -201,6 +204,7 @@ function init_client(socket){
   room_Control.roomFunctions({type: 'joinRoom', roomName: 'main'}, socket, io);
 }
 
+/*
 function collectionExists(collectionName, db) {
     var collectionNames = db.getCollectionNames();
     for (i=0; i<2; i++) {
@@ -210,3 +214,4 @@ function collectionExists(collectionName, db) {
     }
     return false;
 }
+	*/
