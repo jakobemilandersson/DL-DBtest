@@ -24,11 +24,16 @@ mongoClient.connect(url, function(err, db) {
 
 	else {
 		console.log('MongoDB succesfully connected.');
-		db.collection.remove('User', function(err, collection) {});
+		if(collectionExists('User')) {
+			db.collection.remove('User', function(err, collection) {});
+		}
 		db.createCollection('User', function(err, collection) {});
 		db.collection('User').insert({'user':'ADMIN', "socketID":0});
 		console.log('COLLECTION: User, created.');
-		db.collection.remove('UserMove', function(err, collection) {});
+		
+		if(collectionExists('UserMove')) {
+			db.collection.remove('UserMove', function(err, collection) {});
+		}
 		db.createCollection('UserMove', function(err, collection) {});
 		db.collection('UserMove').insert({'socketID':0, 'move':[0,0]});
 		console.log('COLLECTION: UserMove, created.');
@@ -194,4 +199,14 @@ function init_client(socket){
   socket.curr_room = socket.id;
 
   room_Control.roomFunctions({type: 'joinRoom', roomName: 'main'}, socket, io);
+}
+
+public boolean collectionExists(final String collectionName) {
+    Set<String> collectionNames = getCollectionNames();
+    for (final String name : collectionNames) {
+        if (name.equalsIgnoreCase(collectionName)) {
+            return true;
+        }
+    }
+    return false;
 }
