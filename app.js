@@ -201,9 +201,9 @@ function init_client(socket){
   room_Control.roomFunctions({type: 'joinRoom', roomName: 'main'}, socket, io);
 }
 
-function collectionExists(final String collectionName) {
+function collectionExists(collectionName) {
     Set<String> collectionNames = getCollectionNames();
-    for (final String name : collectionNames) {
+    for (name : collectionNames) {
         if (name.equalsIgnoreCase(collectionName)) {
             return true;
         }
