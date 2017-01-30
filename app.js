@@ -41,7 +41,7 @@ mongoClient.connect(url, function(err, db) {
 
 
 	//Uncomment when it's working
-	db.close();
+	//db.close();
 });
 //All routes moved to this module.
 //var routes = require('./routes')(app); will use this next push
@@ -202,7 +202,7 @@ function init_client(socket){
 }
 
 function collectionExists(collectionName) {
-    var collectionNames = getCollectionNames();
+    var collectionNames = db.getCollectionNames();
     for (i=0; i<2; i++) {
         if (collectionNames[i].equalsIgnoreCase(collectionName)) {
             return true;
