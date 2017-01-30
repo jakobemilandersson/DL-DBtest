@@ -202,7 +202,7 @@ function init_client(socket){
 }
 
 function collectionExists(collectionName) {
-    Set<String> collectionNames = getCollectionNames();
+    var collectionNames = getCollectionNames();
     for (name : collectionNames) {
         if (name.equalsIgnoreCase(collectionName)) {
             return true;
