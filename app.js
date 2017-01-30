@@ -203,8 +203,8 @@ function init_client(socket){
 
 function collectionExists(collectionName) {
     var collectionNames = getCollectionNames();
-    for (name : collectionNames) {
-        if (name.equalsIgnoreCase(collectionName)) {
+    for (i=0; i<2; i++) {
+        if (collectionNames[i].equalsIgnoreCase(collectionName)) {
             return true;
         }
     }
